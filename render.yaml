@@ -1,0 +1,11 @@
+services:
+  - type: web
+    name: contract-lens
+    env: python
+    plan: free
+    buildCommand: pip install -r requirements-render.txt
+    startCommand: python server.py
+    healthCheckPath: /health
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.3
